@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주식 자동 매매 플랫폼</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>주식 자동 매매 플랫폼</h1>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">대시보드</a></li>
+                <li><a href="#live-stock">실시간 주식 정보</a></li>
+                <li><a href="#strategy">자동 매매 전략</a></li>
+                <li><a href="#portfolio">포트폴리오 관리</a></li>
+                <li><a href="#reports">거래 내역 및 보고서</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h2>메인 대시보드</h2>
+            <div class="ticker">현재 시장 동향: [주요 지수]</div>
+            <div class="portfolio-summary">
+                <h3>포트폴리오 요약</h3>
+                <p>총 자산: <span id="total-asset">[금액]</span></p>
+                <p>일일 손익: <span id="daily-profit">[금액]</span></p>
+                <p>수익률: <span id="profit-rate">[비율]</span></p>
+            </div>
+            <div class="notifications">
+                <h3>주요 알림</h3>
+                <ul id="notification-list">
+                    <li>[최근 거래 내역 및 알림 메시지]</li>
+                </ul>
+            </div>
+        </section>
+        <section id="live-stock">
+            <h2>실시간 주식 정보</h2>
+            <div class="stock-container">
+                <div class="stock-list">
+                    <h3>관심 종목 리스트</h3>
+                    <ul id="watchlist" class="draggable-list">
+                        <li>[종목1]</li>
+                        <li>[종목2]</li>
+                    </ul>
+                </div>
+                <div class="stock-detail">
+                    <h3>선택된 종목 상세 정보</h3>
+                    <div id="stock-chart">[차트 영역]</div>
+                    <div id="stock-info">[상세 정보]</div>
+                </div>
+                <div class="order-book">
+                    <h3>호가창</h3>
+                    <div id="real-time-order">[실시간 호가]</div>
+                </div>
+            </div>
+        </section>
+        <section id="strategy">
+            <h2>자동 매매 전략 설정</h2>
+            <div id="strategy-wizard">
+                <h3>전략 설정 마법사</h3>
+                <div id="visual-editor">[비주얼 에디터 영역]</div>
+                <div id="backtest-results">[백테스팅 결과 영역]</div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h2>포트폴리오 관리</h2>
+            <div id="asset-allocation-chart">[자산 배분 차트]</div>
+            <div id="holdings-table">[보유 종목 테이블]</div>
+            <div id="performance-chart">[수익률 성과 차트]</div>
+        </section>
+        <section id="reports">
+            <h2>거래 내역 및 보고서</h2>
+            <div class="view-toggle">
+                <button id="calendar-view">캘린더 뷰</button>
+                <button id="list-view">리스트 뷰</button>
+            </div>
+            <div id="transaction-history">[거래 내역 리스트]</div>
+            <div id="report-generation">
+                <button id="tax-report">세금 보고서 생성</button>
+                <button id="performance-report">성과 분석 리포트 생성</button>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

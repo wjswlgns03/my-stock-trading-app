@@ -1,68 +1,164 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --primary-color: #fb5656;
+  /* [--secondary-color]주요 지수 색상은 수익률이 좋으면 #32b31c(초록색), 보통이면 #c9bf39(노란색), 위험이면 #e90e0e(빨간색) */
+  --secondary-color: #32b31c; 
+  --background-color: #F1EFEF;  
+  --text-color: #191717;
+  --accent-color: #7D7C7C;
 }
 
 body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary-color);
+  color: #F1EFEF;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+nav ul li {
+  margin: 0 15px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 40px;
+  background-color: #F1EFEF;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.ticker {
+  background: var(--secondary-color);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.portfolio-summary, .notifications {
+  background-color: #F1EFEF;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.portfolio-summary:hover, .notifications:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stock-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.stock-list, .stock-detail, .order-book {
+  background-color: #F1EFEF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.draggable-list li {
+  background: #F1EFEF;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: move;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.draggable-list li:hover {
+  background: #CCC8AA;
+  transform: translateX(5px);
+}
+
+#strategy-wizard, #asset-allocation-chart, #holdings-table, #performance-chart {
+  background: #F1EFEF;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.view-toggle button, #report-generation button {
+  background: var(--primary-color);
+  color: #F1EFEF;
+  border: none;
+  padding: 12px 20px;
+  margin-right: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.view-toggle button:hover, #report-generation button:hover {
+  background: #CCC8AA;
+  transform: translateY(-2px);
+}
+
+
+
+@media (max-width: 768px) {
+  .stock-container {
+      grid-template-columns: 1fr;
   }
-  a:hover {
-    color: #747bff;
+
+  nav ul {
+      flex-direction: column;
   }
-  button {
-    background-color: #f9f9f9;
+
+  nav ul li {
+      margin: 10px 0;
   }
 }
